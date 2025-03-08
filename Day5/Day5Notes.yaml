@@ -1,0 +1,78 @@
+📑 Agenda for Week 3 Day 1: Locators & TypeScript Fundamentals
+🎯 [ Focus: Mastering the Locators & basics of TypeScript with a foundation in JavaScript concepts ]  
+
+📆 Date: 08 March[Saturday]
+
+🕝 Session Highlights
+
+⿡ Recap
+   - Key Takeaways from Week2. 
+ * Understanding Playwright Architecture,About Browser, Context and Page
+ * CSS Selectors, XPath Selectors.
+
+  Live Quiz
+* Conductiong time-boxed Live Quiz 
+- Questions from previous session with multiple choice answers.
+
+⿢ XPath Axes & Playwright's getBy Locators
+* Relationship based Xpath.
+* Explore getByText, getByRole, getByLabel, and more.  
+* Accessibility-first Automation with getBy Methods.  
+* Real-time Activity: Automating a Login Form.  
+
+⿣ Handling Dropdowns 
+* Techniques for Handling Native and Custom Dropdowns.  
+* Use Case: Selecting Options Dynamically. 
+
+⿤ Understanding Arrays in JavaScript  
+* Basics of Arrays: What and Why?  
+* Common Methods and Operations on Arrays.  
+
+⿥ Promises in JavaScript
+* Asynchronous Programming: Callbacks vs. Promises.  
+* Anatomy of a Promise: States and Methods (then, catch).  
+* Real-world Use Case: Fetching Data Using Promises.  
+
+⿦ Introduction to TypeScript
+* What is TypeScript, and Why Use It?  
+* Setting Up a TypeScript Environment.  
+* Basic Syntax and First TypeScript Program.  
+
+🕡 Wrap Up / Q&A
+
+📝 Keep your physical notebook and pen handy to sketch out ideas!
+
+
+Advanced Xpath - Axes Xpath
+
+Relationship based Xpath
+
+Select Dropdown
+
+//Select by value
+
+await page.selectOptions('select#yourSelectId', {value: 'option Value'})
+
+//Select by label
+
+await page.selectOptions('select#yourSelectId', {value: 'option Label'})
+
+//Select by index
+
+await page.selectOptions('select#yourSelectId', {index : 0})
+
+2. non-select tag - div , ul, li
+
+1. Locate the dropdown - click/ enter the value
+2. Locate the particular option from the dropdown list - click on it
+
+<div id="#custom-dropdown">
+  <div class = ""> Option1 </div>
+   <div class = ""> Option2 </div>
+    <div class = ""> Option3 </div>
+     <div class = ""> Option4 </div>
+
+     Multiple matches - nth(i)
+     nth(0) = 1st element
+     nth(1) = 1st element
+     nth(2) = 1st element
