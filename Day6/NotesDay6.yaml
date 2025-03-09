@@ -1,0 +1,94 @@
+
+🎯 [Focus:  TypeScript and Its Features]  
+
+📆 Date: 09 March [Sunday]  
+
+🕝 Session Highlights  
+
+Recap  
+* Key takeaways from previous sessions.
+
+⿡ Understanding Arrays in JavaScript  
+* Basics of Arrays: What and Why?  
+* Common Methods and Operations on Arrays. 
+
+⿢ Introduction to TypeScript
+* What is TypeScript, and Why Use It?  
+* Setting Up a TypeScript Environment.  
+* Basic Syntax and First TypeScript Program.  
+
+⿣TypeScript Types  
+* Overview of Types in TypeScript:  
+* Hands-on: Declaring Variables with Different Types.  
+
+⿤ Explicit Types & Annotations 
+* Why Use Type Annotations?  
+* Explicitly Defining Function Parameters and Return Types.  
+* Examples:  
+     * Using Annotations with Arrays, Objects, and Functions.  
+     * Type Inference vs. Explicit Types.    
+
+⿥ Type Aliases  
+* What are Type Aliases and why use them?  
+* Syntax and examples.   
+
+⿦ Object Literals  
+* Defining and using object types in TypeScript.  
+
+⿧ Type Assertion  
+* What is Type Assertion?  
+* Examples: Converting unknown types.  
+
+⿨ Enums  
+* Understanding Enums: Numeric and String Enums.  
+
+
+🕡 Wrap Up / Q&A  
+
+📝 Keep your physical notebook and pen handy to sketch out ideas!
+
+
+Arrays :
+
+JavaScript Arrays :
+
+1. Heterogenous.
+2. Dynamic Size.
+
+Using Array Literal :
+
+let courseNames = ["Selenium", "Playwright", "Appium","API"]
+
+Using Array Constructor :
+
+let numbers = new Array (5); //Creates an array with 5 empty slot
+
+[<5 empty items>]
+
+let numbers = new Array (1,2,3,4,5);
+
+TypeScript :
+
+superscript of javascript
+static typing
+
+tsc --> convert .ts into .js
+
+Global installation
+npm install -g typescript
+
+Local installation
+
+npm install typescript --save-dev
+
+To check the version --> tsc --version
+
+To run a .ts file
+
+tsc filename.ts
+
+What us Union type ?
+In union type you can take one of the several values used as | symbol.
+
+Whats is intersection type?
+Combining multiple rype into a single type  symbol used is &
