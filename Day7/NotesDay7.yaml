@@ -1,0 +1,70 @@
+
+
+📆 Date: 15 March [Saturday]  
+
+🕝 Session Highlights  
+
+Recap  
+* Key takeaways from previous sessions. 
+
+Live Quiz
+* Conductiong time-boxed Live Quiz 
+- Questions from previous session with multiple choice answers. 
+
+⿡ Type Assertion  
+* What is Type Assertion?  
+* Examples: Converting unknown types.  
+
+⿢ Enums  
+* Understanding Enums: Numeric and String Enums.
+* Classroom activity in Enum.  
+
+⿣ Optional & Default Parameters  
+* Adding flexibility to functions with optional parameters.  
+* Setting default values for parameters.  
+
+⿤ Playwright Configuration File Walkthrough  
+* Understanding the file structure.  
+* Key properties: Test directory, retries, timeout, projects, and reporters.  
+* Environment-specific configurations: Defining base URL, browser options, and test setup.  
+
+⿥ Assertions Using the 'expect' Library  
+* Commonly used assertions and their applications.  
+
+⿦ Auto-Waiting in Playwright
+* What is auto-waiting, and why is it essential?  
+* Differences between manual waits and auto-waiting.  
+* Examples: Handling dynamic elements without flaky tests.  
+
+
+🕡 Wrap Up / Q&A  
+
+📝 Keep your physical notebook and pen handy to sketch out ideas!
+
+
+Type Assertion :
+
+Compiler will infer as "any" what we so is overide the typeScript inference.
+
+Enum :
+
+Special type in typescript that will allow to define a set of named constant.
+
+Types of enum :
+
+1. Numeric enum : (By default Numeric)
+
+enum Status {
+Active = 1, // [manually assigning value]
+Inactive,
+Suspended
+}
+
+
+2. String enum :
+
+3. Heterogenous enum:
+
+test.describe.serial()
+
+test.describe.parallel()
