@@ -1,0 +1,88 @@
+
+ 
+📑 Agenda for Week 4 Day 2: Auto-Waiting, Handling Alerts, Frames & Windows
+
+🎯 [Focus: Understanding Auto-Waiting, to interact with alerts, frames and windows]  
+
+📆 Date: 16 March[Sunday]  
+
+🕝 Session Highlights
+
+⿡ Recap
+* Quick review of key learnings from previous sessions.  
+
+⿡ Auto-Waiting in Playwright
+* What is auto-waiting, and why is it essential?  
+* Differences between manual waits and auto-waiting.  
+* Examples: Handling dynamic elements without flaky tests.  
+
+⿢ Alerts Handling
+* Understanding Playwright’s support for JavaScript alerts, prompts, and confirmations.  
+* Automating acceptance or dismissal of alerts.  
+
+⿣ Interaction with Frames
+* Understanding the concept of iframes in web applications.  
+* Navigating into and interacting with elements inside frames.  
+  
+⿣ Handling Multiple Windows / Tabs  
+* Managing multiple windows or tabs in Playwright.  
+* Switching between windows and tabs efficiently.  
+
+
+🕡 Wrap Up / Q&A  
+
+📝 Keep your physical notebook and pen handy to sketch out ideas!
+
+
+Auto - waiting 
+
+Actionability checks
+
+1. Visibility.
+2. Stability.
+3. Receive events.
+4. Enabled.
+5. Editable.
+
+.click({force:true});
+
+Type of alerts :
+
+1. Modal alert
+
+Cannot be inspected
+
+Types of Modal alert:
+
+-Simple Alert
+
+a message + OK button
+
+-Confirm alert
+
+a message + Ok /Cancel button.
+
+-Prompt alert
+
+a message + Prompt text box + OK /cancel
+
+Enter the input and accept the alert/ dismiss the alert
+
+
+2. Non-Modal alert (Sweet alert)
+
+Inspectable
+
+
+Interacting with frame
+
+iframes - inline frame
+
+1. page.frame == url
+2. page.frameLocator -
+
+page.locator.framelocator()
+
+<div class ="">
+<iframe>
+contents
