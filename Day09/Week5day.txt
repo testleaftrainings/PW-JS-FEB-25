@@ -1,0 +1,45 @@
+Agenda:
+-----
+Window handling
+File upload
+File Download
+Reading CSV and Json File
+
+
+.env
+test runner
+test hooks
+storage session
+
+
+-----------------
+Window handling
+-------------
+
+context=await browser.newContext()
+page= await context.newPage()
+page1=await context.newPage()
+
+context2=await browser.newContext()
+page3=await context2.newPage()
+
+
+1.https://leafground.com/window.xhtml
+2. create promise for the event
+3. click on Open button
+4. resolve the promise
+5. Using new page refernce , type email field
+6. Get the new Page url
+7. close the parent page
+
+
+click on ele -->2 windows/ page
+chpg1
+chpg2
+
+File upload
+----------
+application -->file upload ele -->attribute  as type='File' (in DOM)
+   -->locator('').setInputFiles("path of the file)
+
+   event Listener--> fileChooser
