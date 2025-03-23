@@ -1,0 +1,87 @@
+Agenda:
+------
+Reading CSV,Json File and env file,random data
+Test runner- only, skip, fail, fixme,step,describe(grouping) & tags
+Test hooks-beforeAll, beforeEach, afterEach and afterAll
+storage session and codegen
+
+
+Data parmaterization:
+---------------------
+CSV -->comma separated value
+tcid,username,password
+
+companyName,firstName,lastName
+
+extention --> .CSV
+install the library
+npm install csv-parse
+
+
+json data  --Key value pair
+extention --> filename.json
+[
+{
+ "username":""
+ "password":""
+},
+{
+    "username":""
+    "password":""
+}
+
+]
+
+.env files
+-------------
+envronment specific data 
+      dev,qa,prod,UAT
+to store secured data
+API payload, tokens
+DB credentials
+
+npm install dotenv
+
+import dotenv from 'dotenv'
+dotenv.config({path:""})
+
+filename.env
+qa.env
+prod.env
+1.way
+process.env.envVariable
+$env:filename='prod' -->set the path to read the file
+to know which  path is set
+$env:filename 
+2.create multiple config file
+npx playwright test filename --config=playwright.qa.config.test
+
+3.package.json
+script{
+    "tesrunqa":"npx playwright test filename --config=playwright.qa.config.test"
+}
+npm install run
+npm run testrunqa
+
+test annotations
+----------------
+test.only() -->executes only that test
+test.skip() -->skip the test from execution
+test.fail() -->test meant to fail , if passess that the bug to fix
+test.fixme()--> to mark the test that needs fixes -->known bug -->failed
+test.step()-->to log the test information in the report
+test.slow() -->will slowdown the execution for 3x of the default timeout
+test.describe() -->group the testcases -->inject the dependency 
+
+test.describe(){  -->sequential
+    test1()
+    test2()
+}
+
+test.describe.serial()-->inject dependency 
+  status of one test will have impact on the subsquent test to be executed
+
+
+  global 
+  project
+  test  -->
