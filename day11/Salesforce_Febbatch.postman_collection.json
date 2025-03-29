@@ -1,0 +1,314 @@
+{
+	"info": {
+		"_postman_id": "710a603c-3bea-4be4-ba71-166466a6e147",
+		"name": "Salesforce_Febbatch",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "23239426"
+	},
+	"item": [
+		{
+			"name": "Oauth generate",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var res=pm.response.json()\r",
+							"\r",
+							"var SF_AccToken=res.access_token\r",
+							"pm.globals.set(\"token_Sf\", SF_AccToken);\r",
+							"\r",
+							"var insc_url=res.instance_url\r",
+							"pm.globals.set(\"SF_instBaseUrl\",insc_url)\r",
+							"\r",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "grant_type",
+							"value": "password",
+							"type": "text"
+						},
+						{
+							"key": "client_id",
+							"value": "3MVG95mg0lk4bathv4oYb772GRC3bVxW1Es_Q3iIRRNR8SK5ApA.LJbPT96HpWJInRGniHTbF.cUq2.uJatoV",
+							"type": "text"
+						},
+						{
+							"key": "client_secret",
+							"value": "149569A62384820C94E7FCB265BEFEC659DE02AD4E4D4BAEE95A354329BCD654",
+							"type": "text"
+						},
+						{
+							"key": "username",
+							"value": "vidyar@testleaf.com",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "Sales@123",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "https://login.salesforce.com/services/oauth2/token",
+					"protocol": "https",
+					"host": [
+						"login",
+						"salesforce",
+						"com"
+					],
+					"path": [
+						"services",
+						"oauth2",
+						"token"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Lead",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var res=pm.response.json()\r",
+							"var sf_unid=res.id\r",
+							"\r",
+							"pm.globals.set(\"SF_Unid\",sf_unid)"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token_Sf}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{token_Sf}}",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"lastname\":\"Kumar\",\r\n    \"company\":\"TCS\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{SF_instBaseUrl}}/services/data/v63.0/sobjects/Lead",
+					"host": [
+						"{{SF_instBaseUrl}}"
+					],
+					"path": [
+						"services",
+						"data",
+						"v63.0",
+						"sobjects",
+						"Lead"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get specific lead",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token_Sf}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{SF_instBaseUrl}}/services/data/v63.0/sobject/Lead/{{SF_Unid}}",
+					"host": [
+						"{{SF_instBaseUrl}}"
+					],
+					"path": [
+						"services",
+						"data",
+						"v63.0",
+						"sobject",
+						"Lead",
+						"{{SF_Unid}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update the lead",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"// var res= pm.response.json()\r",
+							"// console.log(res)"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token_Sf}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"firstname\":\"Nirmal\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{SF_instBaseUrl}}/services/data/v63.0/sobjects/Lead/{{SF_Unid}}",
+					"host": [
+						"{{SF_instBaseUrl}}"
+					],
+					"path": [
+						"services",
+						"data",
+						"v63.0",
+						"sobjects",
+						"Lead",
+						"{{SF_Unid}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Lead",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "SF API  Endpoints",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"// Parse the response body\r",
+							"const response = pm.response.json();\r",
+							"//console.log(response)\r",
+							"// Initialize an array to store the URLs\r",
+							" const sobjectUrls = response.sobjects.map(obj => obj.urls.sobject);\r",
+							"\r",
+							"// sobjects[57].urls.sobject\r",
+							"\r",
+							"// // // Log the URLs to the console\r",
+							"console.log(sobjectUrls);"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token_Sf}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{SF_acTK}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{SF_instBaseUrl}}/services/data/v62.0/sobjects",
+					"host": [
+						"{{SF_instBaseUrl}}"
+					],
+					"path": [
+						"services",
+						"data",
+						"v62.0",
+						"sobjects"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
