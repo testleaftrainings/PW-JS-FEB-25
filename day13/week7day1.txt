@@ -1,0 +1,48 @@
+Agenda:
+-------
+Hooks
+Custom fixture 
+StorageState
+Persistent Context 
+-------------------------------
+tags/testmatch/grep
+
+Hooks -->pre and post condition test
+test.beforeAll()-->before all the test
+test.beforEach()-->executes before each test
+test.afterEach()-->execute after each test
+test.afterAll()-->execute after all the test
+
+testInfo--> information on current running test 
+
+tags-->carectorize the test cases
+  --grep/-g -->global regular expression
+  npx playwright test -g testTitle/tag
+   matching string in test title
+   config file
+   grepInvert:[/Api/,/Regression/] -->except this all other test will be executed
+   grep:[/sanity/,/Regression/] -->test will be executed
+   testMatch:['/day13/*.spec.ts','/day10/*.spec.ts'] -->exeutes only the test files
+   testIgnore:['/day13/*.spec.ts','/day10/*.spec.ts'], -->ignores the test file from execution
+
+   codegen --code generator
+        --> record and playback
+    npx playwright codegen
+    npx playwright codegen -o salesforceCodegen.spec.ts https://loginsalesforce.com
+
+custom fixture
+------------
+page  -->reduce the line code -->browser launch, new window , page refernce 
+usecase -->oops -->creating objects for the classes 
+
+storageState -->cookies ,local storage session storage of login 
+-----------
+ -->using this feature -->skip my login page
+ 50/100 of testcases are based login functionality 
+ 
+ persistentContext --browser profile
+ ----------------
+                -normal user accessing chrome browser
+                -mimic real user browser experience
+
+ 
