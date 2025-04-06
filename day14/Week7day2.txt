@@ -1,0 +1,152 @@
+Agenda:
+------
+Introduction to OOPs & Classes & Object
+Constructor & Access modifier
+Break
+Encapsulation
+Inheritance
+Classroom
+Polymorphism
+Classroom
+
+Object Oriented Programming
+----------------------------
+-Modularize
+-Reusable code
+-Redundancy is reduced
+-Ease of maintainence
+-Better Productivity with quality
+-scalability
+
+
+class --design or blueprint 
+syntax : class classname{
+ property -->info/data
+ proname:type=value
+ methods -->action/logic
+ methodName(){
+
+ }
+
+}
+
+object --real world entity
+syntax:
+ const objName=new ClassName()
+
+new ClassName() -->constructor to initialize the object
+               -->reference to the class
+
+special method with class name-constructor
+not necessary to have the filename and classname to be same
+
+syntax 
+constructor(){
+    define the values
+}
+
+multiple constructor(constructor overloading is not possible)
+constructor() -->method -->value is assigned
+
+
+this -->refer the current class methods /property
+inheritance -->parent methods to be called in child class -->super
+ method Overriding --Polymorphism
+
+Accessmodifier:
+-------------
+  public -->accessible in all the files and Classes/outside the class
+  protected -->within the class and with the derived class
+  private -->only within the class
+
+4 pillars of OOPs
+----------------
+Inheritance -->build relationship betwenn 2 classes
+ Is-A relationship
+ keyword extends
+ child extends parent -->parent methods 
+ basicveh feature extended by newFeature
+
+  duke extends yamaha
+
+  types of Inheritance
+  single Inheritance
+  child extends parent
+  hirerachial
+  Multi-level
+  Multiple inheritance not possible at class level
+ 
+
+Polymorphism -->method which takes multiple form
+Abstraction  -->hiding unwanted and showing relavant info
+Encapsulation -->Binding class members together
+get -read permission and set  --modify permission
+
+
+
+child extends parent{
+    constructor(){
+        parent() -->super()
+        this.propName=value
+    }
+}
+
+LaunchAPP  -->individual class
+ {
+    constructor(){
+
+    }
+
+  loginfuns()
+
+ }
+WelcomePage extends LaunchAPP{
+ crmClick()
+}
+HomePage extends WelcomePage{
+ leadsClick()
+ accClick()
+ oppClick()
+}
+
+LeadsPage extends HomePage{
+
+}
+
+AccountPage extends HomePage
+
+loginwebpage, welcomepage ,homepage ->all the module
+
+                                Leads
+                                Accounts 
+                                opportunity
+
+loginwebpage, welcomepage ,homepage, Leads
+loginwebpage, welcomepage ,homepage,Accounts
+
+spec file:
+
+obje for Accounts test()
+obj for leads  test()
+
+day:1 
+static 
+readonly
+Abstraction  -interface abstractclass
+Polymorphism
+framework -->how to build framework -pom
+jira
+give walkthrough on framework
+
+day 2
+github actions(CI)
+custom reporter
+custom retry
+geolocation
+deviceemulation
+network interception
+visual regression testing
+
+
+
+
