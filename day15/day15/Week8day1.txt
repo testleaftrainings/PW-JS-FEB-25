@@ -1,0 +1,87 @@
+Agenda:
+------
+Polymorphism -30mins
+Abstraction -30 mins
+POM with fixtures
+Jira integration
+Framework Best Practice
+--------------------------
+Polymorphism:
+ -----------
+      many forms 
+      method overloading  --method which takes multiple parameter having owning same name 
+                            in same(within)class
+  login("vidya","vid@123")
+  login("vidya@gmail.com",123)
+  login("vidya")
+  
+
+      method overriding --method with same name with same parameter in different classes
+           -- between the classes  - is a relationship 
+            (two related classes through inheritance)
+
+Abstraction-->data hiding
+     only the required information and hiding unncessary information
+     control the use of the script
+
+     full abstraction -->interface -->100%  -- it is design with no body implemented
+   syntax: interface interfaceName{
+             methodname(parameters):return 
+         }
+     partial abstraction -->abstract class -0 to 100%
+
+
+Abstractclass  -->for partial implementation
+ the class can body of impl / no body of implemtation
+
+ abstract class clasname{
+    type(){
+      //code base for type
+    }
+
+    typeandtab():void  //design
+
+ }
+
+
+ 
+same classes uses extends keyword
+class extends another class
+interface extends another interface
+class implements interface 
+class implements interface1,interface2 --multiple inheritance acheived through interface
+class extends abstractclass implements interface
+cannot create object for both abstract class and interface
+
+
+Inheritance-->acquiring the property of parent to child
+Encapsulation -->binding memeber together in class ->making private /scope restriction
+Polymorphism -->overloading and overriding
+//same class same methodname with diff arguments/number of arguments --overloading
+//same methodname same arguments with differnt classes -->overriding -->pick the child 
+//super. -->access parent 
+Abstraction-->hiding the data -interface and abstract class
+
+public
+private
+protected 
+readonly -->constant 
+static  -->belogs to the class 
+  -->no need create object for the instance
+  -->utility method 
+
+
+POM -->Resuability
+    -->Modularity
+    -->scalability
+    -->increased Productivity
+    -->easy maintenance 
+
+
+loginPage -->welcomePage-->homepage-->Leads -->createLead 
+                                                            ViewLwead -->edit/delete
+                                            -->FindLeads  
+                                            --->MergeLeads
+
+                                      Accounts
+                                      Opportunity
