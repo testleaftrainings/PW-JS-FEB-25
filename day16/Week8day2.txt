@@ -1,0 +1,48 @@
+Agenda:
+------
+Playwright wrapper method creation
+Framework Best Practice
+Jira integration
+custom retry
+custom reporter
+-------------------------
+Pendings:
+--------
+github actions(CI)
+geolocation
+deviceEmulation
+network interception
+visual regression testing
+--------------------------------------------------------------------------
+Jira->api 
+ enpoint
+ credentials -->email and api key
+ body 
+ methods
+ response
+
+ jira-client
+ axios -->open library to test api (3rd party application)
+ npm install axios
+jira api document link:
+https://developer.atlassian.com/cloud/jira/platform/rest/v2/intro/#about
+
+Frameworkor allure reports
+Step:1 npm install --save-dev allure-playwright
+Step:2 set the allure-report lib in the config
+export default defineConfig({
+  reporter: "allure-playwright",
+});
+step:3
+allure generate ./allure-results -o ./allure-report
+step:4
+allure open ./allure-report
+
+
+
+
+
+
+
+
+
